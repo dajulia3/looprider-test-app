@@ -3,6 +3,8 @@
 # Simple 2-step workflow: typecheck then build.
 
 name: build-check
+trigger:
+  type: ci_failure
 steps:
   - name: typecheck
     type: shell

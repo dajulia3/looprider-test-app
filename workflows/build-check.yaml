@@ -1,0 +1,14 @@
+# build-check — Verify the app builds cleanly
+#
+# Simple 2-step workflow: typecheck then build.
+
+name: build-check
+steps:
+  - name: typecheck
+    type: shell
+    command: "npx tsc --noEmit"
+
+  - name: build
+    type: shell
+    depends_on: [typecheck]
+    command: "npm run build"

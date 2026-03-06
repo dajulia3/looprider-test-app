@@ -33,3 +33,6 @@ function App() {
 }
 
 export default App
+
+// Intentional type error
+const broken: number = "not a number";

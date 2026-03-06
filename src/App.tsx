@@ -33,3 +33,7 @@ function App() {
 }
 
 export default App
+
+// Intentional type error for CI test
+const brokenVar: number = "this is not a number";
+console.log(brokenVar);

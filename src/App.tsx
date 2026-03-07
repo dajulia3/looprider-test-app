@@ -28,6 +28,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <footer style={{ marginTop: "2rem", opacity: 0.6 }}>Built with LoopRider</footer>
     </>
   )
 }

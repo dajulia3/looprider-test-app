@@ -28,8 +28,13 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <footer style={{ marginTop: '2rem', padding: '1rem', opacity: 0.7, fontSize: '0.85rem' }}>
+        <p>{new Date().toLocaleDateString()}</p>
+        <p>Built with LoopRider</p>
+      </footer>
     </>
   )
 }
 
 export default App
+// Modified by manual QA run

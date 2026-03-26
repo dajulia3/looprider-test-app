@@ -1,0 +1,17 @@
+name: quick-check
+trigger:
+  type: manual
+default_provider: claude_local
+default_model: sonnet
+steps:
+  - name: check
+    type: agent
+    prompt: |
+      Run `npx tsc --noEmit` and `npm run build`.
+      If either fails, fix the issue.
+    timeout: 10m
+
+  - name: verify
+    type: shell
+    depends_on: [check]
+    command: "npm run build"

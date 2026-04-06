@@ -28,8 +28,12 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <footer style={{ marginTop: '2rem', fontSize: '0.85rem', opacity: 0.6 }}>
+        Built with LoopRider &copy; {new Date().getFullYear()}
+      </footer>
     </>
   )
 }
 
 export default App
+// Modified by manual QA run

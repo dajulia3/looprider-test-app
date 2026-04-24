@@ -1,0 +1,32 @@
+name: build-and-approve
+trigger:
+  type: manual
+default_provider: claude_local
+default_model: sonnet
+steps:
+  - name: typecheck
+    type: shell
+    command: "npx tsc --noEmit"
+    timeout: 5m
+
+  - name: build
+    type: shell
+    command: "npm run build"
+    timeout: 5m
+
+  - name: review
+    type: agent
+    depends_on: [typecheck, build]
+    prompt: |
+      Review all changes on this branch against master.
+      Summarize what changed and flag any issues.
+    timeout: 10m
+
+  - name: approval
+    type: gate
+    depends_on: [review]
+
+  - name: push
+    type: shell
+    depends_on: [approval]
+    command: "git push -u origin HEAD"

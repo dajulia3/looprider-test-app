@@ -33,3 +33,5 @@ function App() {
 }
 
 export default App
+
+const loopRiderManualTypeError: string = 42;

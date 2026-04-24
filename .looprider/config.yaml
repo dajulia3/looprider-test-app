@@ -1,0 +1,5 @@
+projectName: looprider-test-app
+reactiveTriggers:
+  - id: ci-fix
+    triggerType: CI_FAILURE
+    skill: github:gh-fix-ci
